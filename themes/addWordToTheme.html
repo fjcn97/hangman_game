@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+        <title>Adicionar palavra a tema</title>
+    </head>
+    <body onload="getInfoActualUser(); verifyIfAnyUserIsLoggedin(); if (currentUser !== 'admin') { window.location.href = '../index.html'; }; loadThemes();">
+        <nav class='navbar navbar-expand-lg navbar-dark bg-dark'><a class='navbar-brand' href='../index.html'>Jogo da Forca</a><button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'><span class='navbar-toggler-icon'></span></button><div class='collapse navbar-collapse' id='navbarSupportedContent'><ul class='navbar-nav mr-auto'><li class='nav-item'><a class='nav-link' href='../index.html'>Página Inicial</a></li><li class='nav-item'><a class='nav-link' href='../game.html' id="gameLink">Jogar</a></li><li class='nav-item'><a class='nav-link' href='../stats.html'>Estatísticas</a></li><li class='nav-item'><a class='nav-link' href='../profile.html'>Perfil</a></li><li class='nav-item'><a class='nav-link text-danger' style='cursor: pointer' onclick='logout();'>Logout</a></li><li class='nav-item'><a class='nav-link' href='../rules.html'>Regras</a></li><li class='nav-item'><a class='nav-link' href='../help.html'>Ajuda</a></li></ul></div></nav>
+        
+        <div class="container">
+            <h1 class="text-center">Adicionar palavra a tema</h1>
+            <br>
+            <form>
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Tema (*)</label>
+                    <select class="custom-select" id="themes"></select>
+                </div>
+                <div class="form-group">
+                    <label>Palavra (*)</label>
+                    <input class = "form-control" type="text" id="word" placeholder = "Portugal" onkeypress='return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122) || (event.keyCode === 231));' onpaste="return false;" autocomplete="off" onkeydown="if (event.keyCode === 13) { addWordToTheme(); return false; }" required>
+                    <small class="form-text text-muted">
+                      Não pode inserir palavras com hífen (-), ou acentos, ou o til (~). A palavra deve conter 3 ou + caracteres.
+                    </small>
+                </div>
+
+                <button class="btn btn-dark" onclick = "return addWordToTheme();"><i class="fas fa-plus"></i> Adicionar palavra</button>  
+            </form>
+            <br>
+            <p>* Campo obrigatório</p>
+        </div>
+        
+        <span class = "back">
+            <i class="fas fa-arrow-circle-left" onclick = "window.location.href='../index.html';"></i>
+        </span>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="../scripts/game.js"></script>
+        <script src="../scripts/registerValidations.js"></script>
+    </body>
+</html>

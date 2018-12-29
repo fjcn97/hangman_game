@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+        <title>Registo</title>
+    </head>
+    
+    <body class= "bg-light" onload="checkRegister();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="../index.html">Jogo da Forca</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../game.html" id='gameLink'>Jogar</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='../rules.html'>Regras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../help.html">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+        <div class="container">
+            <h1 class="text-center">Registo</h1>
+            <form action="" method="post" onsubmit="return register();">
+                <div class="form-group">
+                    <label for="username" class="label">Username (*)</label>
+                    <input class = "form-control" type="text" id="username" placeholder="dsp93" maxlength="12" onkeypress="preventWhiteSpaces(event);" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">Password (*)</label>
+                    <input class = "form-control" type="password" id="pass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required>
+                </div>
+                <div class="form-group">
+                    <label for="passConf">Confirmar password (*)</label>
+                    <input class = "form-control" type="password" id="passConf" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required />
+                <span id='passMessage'></span>
+                </div>
+
+                <div id="message">
+                    <h6>A password deve conter, pelo menos:</h6>
+                    <p id="capital" class="invalid">Uma letra maiúscula</p>
+                    <p id="letter" class="invalid">Uma letra minúscula</p>
+                    <p id="number" class="invalid">Um número</p>
+                    <p id="length" class="invalid">Oito caracteres e, no máximo, doze caracteres</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nome completo (*)</label>
+                    <input class = "form-control" type="text" id="name" placeholder="Daniel Silva Pereira" onkeydown="preventNumbers(event);" onkeyup="preventNumbers(event);" maxlength="64" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (*)</label>
+                    <input class = "form-control" type="email" id="email" placeholder="dsp@gmail.com" required>
+                </div>
+                
+                <div id="avatars">
+                    <label>Avatar</label>
+                    <br>
+                    <input type="radio" name="avatar" value="null"/> Sem avatar
+                    
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value = "style/skull.png"/>
+                        <img src="../style/skull.png" class = "avatar" alt="Avatar with a skull"/>
+                    </label>
+                    
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value = "style/eyes_moving.gif"/>
+                        <img src="../style/eyes_moving.gif" class = "avatar" alt="Avatar with eyes moving"/>
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value = "style/head_down.jpg"/>
+                        <img src="../style/head_down.jpg" class = "avatar" alt="Avatar with a person with the head down"/>
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value = "style/middle_finger.jpg"/>
+                        <img src="../style/middle_finger.jpg" class = "avatar" alt="Avatar with a middle finger up"/>
+                    </label>
+                    
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value = "style/monster_face.jpg"/>
+                        <img src="../style/monster_face.jpg" class = "avatar" alt="Avatar with a monster's face"/>
+                    </label>
+                </div>
+                <br>
+                <button class="btn btn-dark" type = "submit"><i class="fas fa-user-plus"></i> Registar</button>
+            </form>
+            <br>
+            <p> * Campo obrigatório </p>
+        </div>
+            
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="../scripts/game.js"></script>
+        <script src="../scripts/registerValidations.js"></script>
+    </body>
+</html>

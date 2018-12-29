@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style/style.css"/>
+        <title>Ajuda</title>
+    </head>
+    <body class="bg-light" onload="toHelpPage();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="index.html">Jogo da Forca</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="game.html" id="gameLink">Jogar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/login.html">Login</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='rules.html'>Regras</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="help.html">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+        <div class="container">
+            <h1 class="text-center">Ajuda</h1>
+            <div id="helpText">
+                <p class="indent"><b>No Chrome, em qualquer página, pode ver o que está a acontecer por detrás da aplicação. Comece por pressionar a tecla F12. Procure pelo item "Application". Clique duas vezes em "Local Storage". Depois, clique em "file://".</b></p>
+                <p class="indent">Inicialmente, tem duas contas disponíveis para serem usadas: A do administrador ("admin") e a de um utilizador comum ("fjcn97").</p>
+                <p class="indent">As respetivas <i>passwords</i> são o primeiro valor ("Value") associado às chaves ("Key") destas contas. Com estas palavras-passe, já pode iniciar sessão nas contas.</p>
+                <p class="indent">Numa conta que tenha criado (e não que já venha criada), poderá alterar o respetivo perfil, clicando no item da barra de navegação "Perfil", após ter iniciado sessão.</p>
+                <p class="indent">Como administrador, pode adicionar temas e adicionar palavras a estes.</p>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="scripts/game.js"></script>
+    </body>
+</html>
