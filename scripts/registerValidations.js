@@ -1,6 +1,6 @@
 "use strict";
 
-//Prevent spaces in the username, password and confirm password inputs
+// Prevent spaces in the username, password and confirm password inputs
 function preventWhiteSpaces(event) {
     if (event.which === 32) {
         event.preventDefault();
@@ -10,64 +10,45 @@ function preventWhiteSpaces(event) {
 
 // When the user clicks on the password field, show the message box
 function showMessageBox() {
-    document.getElementById("message").style.display = "block";
+    $("#message").css('display', 'block');
 }
 
 // When the user clicks outside of the password field, hide the message box
 function hideMessageBox() {
-    document.getElementById("message").style.display = "none";
+    $("#message").css('display', 'none');
 }
 
-letter = document.getElementById("letter");
-let capital = document.getElementById("capital");
-let number = document.getElementById("number");
-let length = document.getElementById("length");
+// Validate lowercase and uppercase letters
+// Validate numbers
+function switchStatusClass(passOrPassConf, expression, element) {
+    if (passOrPassConf.match(expression)) {
+        $(element).removeClass("invalid");
+        $(element).addClass("valid");
+    } else {
+        $(element).removeClass("valid");
+        $(element).addClass("invalid");
+    }
+}
 
-//Change message box that appears when clicking / writing in the pass and confirm pass inputs
+// Change message box that appears when clicking / writing in the pass and confirm pass inputs
 function changeMessageBox(inputId) {
-    let passOrPassConf = document.getElementById(inputId).value;
+    const passOrPassConf = $(`#${inputId}`).val();
 
-    // Validate lowercase letters
-    let lowerCaseLetters = /[a-z]/g;
-    if (passOrPassConf.match(lowerCaseLetters)) {
-        letter.classList.remove("invalid");
-        letter.classList.add("valid");
-    } else {
-        letter.classList.remove("valid");
-        letter.classList.add("invalid");
-    }
-
-    // Validate capital letters
-    let upperCaseLetters = /[A-Z]/g;
-    if (passOrPassConf.match(upperCaseLetters)) {
-        capital.classList.remove("invalid");
-        capital.classList.add("valid");
-    } else {
-        capital.classList.remove("valid");
-        capital.classList.add("invalid");
-    }
-
-    // Validate numbers
-    let numbers = /[0-9]/g;
-    if (passOrPassConf.match(numbers)) {
-        number.classList.remove("invalid");
-        number.classList.add("valid");
-    } else {
-        number.classList.remove("valid");
-        number.classList.add("invalid");
-    }
+    switchStatusClass(passOrPassConf, /[a-z]/g, "#letter");
+    switchStatusClass(passOrPassConf, /[A-Z]/g, "#capital");
+    switchStatusClass(passOrPassConf, /[0-9]/g, "#number");
 
     // Validate length
     if (passOrPassConf.length >= 8 && passOrPassConf.length <= 12) {
-        length.classList.remove("invalid");
-        length.classList.add("valid");
+        $("#length").removeClass("invalid");
+        $("#length").addClass("valid");
     } else {
-        length.classList.remove("valid");
-        length.classList.add("invalid");
+        $("#length").removeClass("valid");
+        $("#length").addClass("invalid");
     }
 }
 
-//Verify if passwords are equal
+// Check if passwords are equal
 function verifyPasswords() {
     if ($('#pass').val() === $('#passConf').val()) {
         $('#passMessage').html('As passwords combinam.').css('color', 'green');
@@ -76,10 +57,10 @@ function verifyPasswords() {
     }
 }
 
-//Prevents numbers to be inserted in the name
+// Prevent numbers to be inserted in the name
 function preventNumbers(event) {
-    let keyCode = (event.keyCode ? event.keyCode : event.which);
-    if (keyCode > 47 && keyCode < 58) {
+    const keyCode = (event.keyCode ? event.keyCode : event.which);
+    if (keyCode >= 48 && keyCode <= 57 || keyCode >= 96 && keyCode <= 105) {
         event.preventDefault();
     }
 }

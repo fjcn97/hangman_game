@@ -1,17 +1,19 @@
-/* This whole block is for the register and registerStore pages... */
+/* This whole block is for the register page... */
 /* The message box is shown when the user clicks on the password field */
 #message {
-    display:none;
+    display: none;
     position: relative;
-    border: 1px groove #ddd !important;
-    padding: 0 1.4em 0 1.4em !important;
+    border: 1px solid #ced4da !important;
+    padding: 1em 1.4em 0 1.4em !important;
+    border-radius: 0.25rem;
+    background-color: white;
 }
 
 #message p {
     padding: 0 35px;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
+/* Add a green text color and a checkmark when the requirement is fulfilled */
 .valid {
     color: green;
 }
@@ -22,7 +24,7 @@
     content: "✔";
 }
 
-/* Add a red text color and an "x" when the requirements are wrong */
+/* Add a red text color and an "x" when the requirement is not fulfilled yet */
 .invalid {
     color: red;
 }
@@ -30,13 +32,12 @@
 .invalid:before {
     position: relative;
     left: -35px;
-    content: "✖";
+    content: "❌";
 }
 /* that ends here!!! */
 
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-    /*position: fixed;*/
     right: 0;
     bottom: 0;
     width: 100%; 
@@ -53,12 +54,12 @@
     padding: 20px;
 }
 
-/* Style the buttons of the home page */
-#startGame, #myBtn, #addTheme, #addWordToTheme {
+/* Style all buttons */
+.btn {
     padding: 10px;
 }
 
-#startGame:hover, #myBtn:hover, #addTheme:hover, #addWordToTheme:hover {
+#startGame:hover, #pausePlayBtn:hover, #addTheme:hover, #addWordToTheme:hover:enabled {
     background: #fff;
     border-color: #fff;
     color: #343a40;
@@ -71,15 +72,19 @@
 
 /* Style the title of the pages */
 h1 {
-    border: 1px solid lightgrey;
+    border: 1px solid #ced4da;
+    border-top: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    padding-bottom: 8px;
 }
 
 #helpText {
-    border: 1px solid lightgrey;
+    border: 1px solid #ced4da;
     padding: 3%;
 }
 
-/* To style the back button */
+/* To style the arrow back button */
 .back {
     position: fixed;
     bottom: 3%;
@@ -96,20 +101,21 @@ h1 {
   box-sizing: border-box;
 }
 
-.avatars > input{
+.avatars > input {
   display: none;
 }
 
-.avatars > input + img{
+.avatars > input + img {
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid #ced4da;
 }
 
-.avatars > input:checked + img{
+.avatars > input:checked + img {
   border: 2px solid red;
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
+    width: 154.8px;
+    height: 154.8px;
+    border-radius: 0.25rem;
 }
