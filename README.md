@@ -25,7 +25,7 @@
 ##### In the navigation bar, click in "Ajuda".
 ##### Play at your will!
 
-![jogo_da_forca_index](https://user-images.githubusercontent.com/36827489/50540384-c3cd9a00-0b88-11e9-8f78-de4be2eb98a3.png)
-![jogo_da_forca_addwordtotheme](https://user-images.githubusercontent.com/36827489/50540386-c4663080-0b88-11e9-9e81-63c1b8d12225.png)
-![jogo_da_forca_game](https://user-images.githubusercontent.com/36827489/50540383-c3cd9a00-0b88-11e9-9c97-796aa129a68f.png)
-![jogo_da_forca_stats](https://user-images.githubusercontent.com/36827489/50540385-c4663080-0b88-11e9-9d04-6abf26c948fc.png)
+![index](https://user-images.githubusercontent.com/36827489/62660407-de10f700-b965-11e9-8fe1-867b1c4afea7.png)
+![register](https://user-images.githubusercontent.com/36827489/62660410-dea98d80-b965-11e9-959d-1b44a34f80ee.png)
+![profile](https://user-images.githubusercontent.com/36827489/62660408-de10f700-b965-11e9-97d9-81acfea760b1.png)
+![game](https://user-images.githubusercontent.com/36827489/62660405-de10f700-b965-11e9-99da-49aef04d6e04.png)
